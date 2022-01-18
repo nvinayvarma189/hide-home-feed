@@ -1,0 +1,41 @@
+{
+    "name": "Hide Reddit Feed",
+    "description": "An extension that hides your feed on the reddit homepage.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "hide_reddit_feed.js",
+                "jquery-3.5.1.min.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "tabs",
+        "webRequest",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "https://*/"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    },
+    "options_page": "options.html"
+}
