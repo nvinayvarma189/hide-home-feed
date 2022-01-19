@@ -9,8 +9,9 @@
                 "<all_urls>"
             ],
             "js": [
-                "hide_reddit_feed.js",
-                "jquery-3.5.1.min.js"
+                "jquery-3.5.1.min.js",
+                "require-2.3.6.js",
+                "hide_reddit_feed.js"
             ],
             "run_at": "document_start"
         }
