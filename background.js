@@ -17,11 +17,8 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.webNavigation.onBeforeNavigate.addListener(function (details) {
     console.log(details.url)
     if (details.url == BLOCK_URL || (details.url.includes("/r/") && !details.url.includes("comments"))) {
-        chrome.storage.sync.get("REDIRECTION_ENABLED", ({ REDIRECTION_ENABLED }) => {
-            console.log(REDIRECTION_ENABLED)
-            if (REDIRECTION_ENABLED) {
-                chrome.tabs.update({ url: REDIRECT_URL }); // Redirect to google.com
-            }
-        });
+        if (REDIRECTION_ENABLED) {
+            chrome.tabs.update({ url: REDIRECT_URL }); // Redirect to google.com
+        }
     }
 });
