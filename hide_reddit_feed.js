@@ -1,4 +1,4 @@
-import {BLOCK_URL} from './consts.js';
+const BLOCK_URL = "https://www.reddit.com/";
 let current_url = document.location.href
 
 if (BLOCK_URL.includes(current_url)) {
